@@ -1,0 +1,40 @@
+About
+-----
+
+This is part of the process that automatically installs and configures push notifcations 
+for production iOS apps. This portion of code just uploads them to the R7 server.
+
+How-to
+------
+
+This process was tested only on Mac OS 10.7 Lion using Ruby 1.9.2.
+
+. First, install your gems.
+----
+gem install keychain_manager
+gem install watir-webdriver
+----
+. Download chromedriver binary.
+.. Make sure that you have Chrome browser installed.
+.. Here: http://code.google.com/p/chromium/downloads/list
+.. Put the chromedrive binary in '/usr/bin' nowhere else!
+. Checkout and clone the project that automatically builds the drivers
+----
+git clone git@github.com:jprichardson/GeneratePushCerts.git
+----
+. Modify config.example.yml in the GeneratePushCerts folder.
+.. Set 'user' to "partners@reflect7.com"
+.. and the password to the password we told you previously. [I don't want to include it 
+   in source control. This is just the iOS developer login information.]
+.. modify 'download_dir' to the the directory that Chrome downloads files to.
+.. modify 'cert_dir' to whatever your choice of directories is. This is the output directory.
+. Run the app.
+.. ruby app.rb
+. Clone this app... 
+.. git clone git@github.com:reflect7/UploadPushCerts.git
+. Modify app.rb
+.. Make sure that 'IN_DIR' is the same as 'cert_dir' set previously. 
+. Verify that your ssh public key is copied to the R7 server.
+.. cat .ssh/id_rsa.pub | ssh root@data.mobilefanapps.com 'cat >> .ssh/authorized_keys'
+
+

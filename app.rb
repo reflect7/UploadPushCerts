@@ -1,7 +1,10 @@
+#requires that public key is copied over to data.mobilefanapps.com
+#cat .ssh/id_rsa.pub | ssh root@data.mobilefanapps.com 'cat >> .ssh/authorized_keys'
+
 require 'csv'
 require 'fileutils'
 
-csv_file = File.join(File.dirname(__FILE__), 'resources', 'nfl-teams.csv')
+csv_file = File.join(File.dirname(__FILE__), 'resources', 'nfl-teams.csv') #<---- modify this file for the teams
 
 IN_DIR = '/Users/jprichardson/Desktop/PushCerts/'
 
