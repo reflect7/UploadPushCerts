@@ -16,7 +16,7 @@ gem install watir-webdriver
 ----
 . Download chromedriver binary.
 .. Make sure that you have Chrome browser installed.
-.. Here: http://code.google.com/p/chromium/downloads/list
+.. Download Chromedriver here: http://code.google.com/p/chromium/downloads/list
 .. Put the chromedrive binary in '/usr/bin' nowhere else!
 . Checkout and clone the project that automatically builds the drivers
 ----
@@ -30,8 +30,10 @@ git clone git@github.com:jprichardson/GeneratePushCerts.git
 .. modify 'cert_dir' to whatever your choice of directories is. This is the output directory.
 . Run the app.
 .. ruby app.rb
-. Clone this app... 
-.. git clone git@github.com:reflect7/UploadPushCerts.git
+. Clone this app...
+----
+git clone git@github.com:reflect7/UploadPushCerts.git
+----
 . Modify app.rb
 .. Make sure that 'IN_DIR' is the same as 'cert_dir' set previously. 
 . Verify that your ssh public key is copied to the R7 server.
